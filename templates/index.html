@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Enter new engineer</h1>
-    <form action="/success" method="post">  
+    <form action="/post-engineer" method="post">  
         <input type="text" name="name" placeholder="Name">
         <input type="text" name="age" placeholder="Age">
         <input type="text" name="height" placeholder="Height (inches)">
@@ -24,6 +24,7 @@
           <th>Age</th>
           <th>Height</th>
           <th>Group</th>
+          <th>Edit</th>
         </tr>
         {% for engineer in engineers %}
             <tr>
@@ -31,6 +32,9 @@
                 <td>{{engineer["age"]}}</td>
                 <td>{{engineer["height"]}}</td>
                 <td>{{engineer["group"]}}</td>
+                <td><a href="{{ '/edit/%s' %engineer.rowid }}">Edit</a> |
+                    <a href="{{ '/delete-engineer/%s' %engineer.rowid }}">Delete</a>
+                </td>
             </tr>
         {% endfor %}
       </table>  

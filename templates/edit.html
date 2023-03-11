@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Edit engineer</h1>
+    <form action="{{ '/edit-engineer/%s' %engineer.rowid }}" method="post">  
+        <input type="text" name="name" value="{{engineer['name']}}">
+        <input type="text" name="age" value="{{engineer['age']}}">
+        <input type="text" name="height" value="{{engineer['height']}}">
+        <input type="text" name="group" value="{{engineer['group']}}">
+        <input type="Submit" value="Submit">
+    </form>
+
+</body>
+</html>
